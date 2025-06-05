@@ -95,7 +95,6 @@ use hg_shared::hash_sha256;
 #[reducer]
 pub fn get_random_seed(ctx: &ReducerContext, seed: String) -> Result<(), String> {
     let mut s = seed.clone();
-    log::info!("get_random_seed called with seed: {}", s);
     if seed.is_empty() {
         s = StUuid::new(ctx).to_string();
     }
