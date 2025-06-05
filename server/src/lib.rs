@@ -87,3 +87,14 @@ pub fn identity_disconnected(ctx: &ReducerContext) {
         log::warn!("Disconnect event for unknown user with identity {:?}", ctx.sender);
     }
 }
+
+
+mod utils;
+use utils::stuuid::StUuid;
+
+#[reducer]
+pub fn get_random_seed(ctx: &ReducerContext) -> Result<(), String> {
+    let body = StUuid::new(ctx);
+
+    return send_message(ctx, body.to_string());
+}
