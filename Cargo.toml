@@ -13,7 +13,7 @@ spacetimedb = "1.1.2"
 log = "0.4"
 sha3 = "0.10"
 serde = { version = "1.0.219", features = ["serde_derive"] }
-hg_shared = { git = "https://github.com/RainBowCreation/hg_shared.git", branch = "main" }
+hg_shared = { path = "../shared" }
 
 [dependencies.uuid] 
 version = "1.16.0"
