@@ -1,14 +1,12 @@
 // === SpacetimeDB UUID implementation ===
 use std::{fmt::Display, ops::Deref};
+use uuid::Uuid;
+use hg_shared::StUuid
 
 use spacetimedb::{
     sats::{impl_deserialize, impl_serialize, impl_st},
     ReducerContext,
 };
-use uuid::Uuid;
-
-#[derive(Debug, serde::Serialize, serde::Deserialize)]
-pub struct StUuid(Uuid);
 
 impl_st!([] StUuid, spacetimedb::sats::AlgebraicType::String);
 impl_serialize!([] StUuid, (self, ser) => {
