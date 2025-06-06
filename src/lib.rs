@@ -88,9 +88,7 @@ pub fn identity_disconnected(ctx: &ReducerContext) {
     }
 }
 
-mod utils;
-use utils::stuuid::StUuid;
-use hg_shared::hash_sha256;
+use hg_shared::{StUuid, hash_sha256};
 
 #[reducer]
 pub fn get_random_seed(ctx: &ReducerContext, seed: String) -> Result<(), String> {
