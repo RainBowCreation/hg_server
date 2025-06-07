@@ -13,8 +13,8 @@ spacetimedb = "1.1.2"
 log = "0.4"
 sha3 = "0.10"
 serde = { version = "1.0.219", features = ["serde_derive"] }
-hg_shared = { path = "../shared" }
-hg_bridge = { path = "../bridge" }
+hg_shared_core = { path = "../shared/core" }
+hg_shared_struct = { path = "../shared/struct" }
 
 [dependencies.uuid] 
 version = "1.16.0"

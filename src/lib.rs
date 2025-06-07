@@ -88,7 +88,7 @@ pub fn identity_disconnected(ctx: &ReducerContext) {
     }
 }
 
-use hg_bridge::{hash_sha256};
+use hg_shared_core::{hash_sha256};
 mod utils;
 
 #[reducer]
