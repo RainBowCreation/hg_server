@@ -88,13 +88,14 @@ pub fn identity_disconnected(ctx: &ReducerContext) {
     }
 }
 
-use hg_shared::{StUuid, hash_sha256};
+use hg_bridge::{hash_sha256};
+mod utils;
 
 #[reducer]
 pub fn get_random_seed(ctx: &ReducerContext, seed: String) -> Result<(), String> {
     let mut s = seed.clone();
     if seed.is_empty() {
-        s = StUuid::new(ctx).to_string();
+        s = utils::st_uuid::StUuid::new(ctx).to_string();
     }
     return send_message(ctx, hash_sha256(&s));
 }
